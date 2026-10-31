@@ -1,0 +1,175 @@
+import { MenuItem, Category, Testimonial, GalleryItem } from '../types';
+
+// Coffee Menu
+export const menuItems: MenuItem[] = [
+  {
+    id: '1',
+    name: 'Espresso Noir',
+    description: 'Double-shot espresso with notes of dark chocolate and roasted caramel.',
+    price: 250,
+    category: 'coffee',
+    image: '/images/coffee-1.jpg',
+    popular: true,
+  },
+  {
+    id: '2',
+    name: 'CaféAu Lait',
+    description: 'Smooth French press coffee with steamed milk and a delicate foam.',
+    price: 320,
+    category: 'coffee',
+    image: '/images/coffee-2.jpg',
+  },
+  {
+    id: '3',
+    name: 'Cappuccino Gold',
+    description: 'Artisanal cappuccino with premium espresso and golden honey foam.',
+    price: 380,
+    category: 'coffee',
+    image: '/images/coffee-3.jpg',
+    popular: true,
+  },
+  {
+    id: '4',
+    name: 'Flat White',
+    description: 'Double ristretto with velvety microfoam and cocoa dusting.',
+    price: 350,
+    category: 'coffee',
+    image: '/images/coffee-4.jpg',
+  },
+  {
+    id: '5',
+    name: 'Matcha Zen',
+    description: 'Premium ceremonial matcha whisked with hot water and almond milk.',
+    price: 420,
+    category: 'tea',
+    image: '/images/tea-1.jpg',
+    new: true,
+  },
+  {
+    id: '6',
+    name: 'Chai Latte',
+    description: 'Spiced black tea with cardamom, cinnamon, and steamed oat milk.',
+    price: 380,
+    category: 'tea',
+    image: '/images/tea-2.jpg',
+  },
+  {
+    id: '7',
+    name: 'Jasmine Moon',
+    description: 'Premium jasmine green tea with silver tips and lemongrass.',
+    price: 350,
+    category: 'tea',
+    image: '/images/tea-3.jpg',
+  },
+  {
+    id: '8',
+    name: 'Croissant Lumière',
+    description: 'Buttery, flaky French croissant baked fresh daily.',
+    price: 280,
+    category: 'pastry',
+    image: '/images/pastry-1.jpg',
+    popular: true,
+  },
+  {
+    id: '9',
+    name: 'Chocolate Éclair',
+    description: 'Classic choux pastry filled with chocolate custard and glaze.',
+    price: 320,
+    category: 'pastry',
+    image: '/images/pastry-2.jpg',
+  },
+  {
+    id: '10',
+    name: 'Matcha Tart',
+    description: 'Artisanal matcha cream in a crisp vanilla bean tart shell.',
+    price: 450,
+    category: 'pastry',
+    image: '/images/pastry-3.jpg',
+  },
+  {
+    id: '11',
+    name: 'Avocado Toast',
+    description: 'Sourdough bread topped with smashed avocado and microgreens.',
+    price: 520,
+    category: 'breakfast',
+    image: '/images/breakfast-1.jpg',
+    new: true,
+  },
+  {
+    id: '12',
+    name: 'Eggs Benedict',
+    description: 'Poached eggs on English muffin with ham and hollandaise sauce.',
+    price: 620,
+    category: 'breakfast',
+    image: '/images/breakfast-2.jpg',
+  },
+];
+
+export const categories: Category[] = [
+  { id: 'all', name: 'All', icon: null as unknown as React.ReactNode },
+  { id: 'coffee', name: 'Coffee', icon: null as unknown as React.ReactNode },
+  { id: 'tea', name: 'Tea', icon: null as unknown as React.ReactNode },
+  { id: 'pastry', name: 'Pastry', icon: null as unknown as React.ReactNode },
+  { id: 'breakfast', name: 'Breakfast', icon: null as unknown as React.ReactNode },
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    id: '1',
+    name: 'Elena Thompson',
+    role: 'Food Critic',
+    content: 'NOIR CAFÉ offers an extraordinary coffee experience. The atmosphere is sophisticated, and every drink tells a story.',
+    rating: 5,
+  },
+  {
+    id: '2',
+    name: 'Marcus Chen',
+    role: 'Coffee Enthusiast',
+    content: 'The attention to detail in every cup is remarkable. From bean selection to brewing technique, perfection achieved.',
+    rating: 5,
+  },
+  {
+    id: '3',
+    name: 'Sarah Williams',
+    role: 'Design Lover',
+    content: 'A perfect blend of aesthetics and functionality. The space feels luxurious yet welcoming. Highly recommend!',
+    rating: 4,
+  },
+  {
+    id: '4',
+    name: 'David Rodriguez',
+    role: 'Business Owner',
+    content: 'My favorite spot for morning meetings. The Wi-Fi is reliable, and the baristas always get my order right.',
+    rating: 5,
+  },
+];
+
+export const galleryItems: GalleryItem[] = [
+  { id: '1', image: '/images/gallery-1.jpg', caption: 'Interior Atmosphere', category: 'Interior' },
+  { id: '2', image: '/images/gallery-2.jpg', caption: 'Artisanal Brewing', category: 'Process' },
+  { id: '3', image: '/images/gallery-3.jpg', caption: 'Coffee Beans', category: 'Source' },
+  { id: '4', image: '/images/gallery-4.jpg', caption: 'Golden Latte Art', category: 'Art' },
+  { id: '5', image: '/images/gallery-5.jpg', caption: 'Evening Ambience', category: 'Mood' },
+  { id: '6', image: '/images/gallery-6.jpg', caption: 'Premium Selection', category: 'Menu' },
+];
+
+// Icons Component
+export const Icons = {
+  Coffee: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg>,
+  Cup: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg>,
+  CupHot: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/><path d="M6 10v2"/><path d="M10 10v2"/><path d="M14 10v2"/></svg>,
+  Pastry: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M12 2v5"/><path d="m5 7 7-4 7 4"/></svg>,
+  Sun: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>,
+  Star: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
+  MapPin: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>,
+  Phone: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>,
+  Mail: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>,
+  Clock: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
+  Menu: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>,
+  X: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>,
+  ArrowRight: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>,
+  Instagram: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>,
+  Twitter: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-12.7 12.5S1.2 2.4 7.8 1.5c.6-.1 1.2-.2 1.8-.2 3.6 0 6.6 2.7 7.3 6.3.7 3.6-1.5 6.9-4.5 7.9"/></svg>,
+  Facebook: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 12h6"/><path d="M9 15h6"/></svg>,
+  User: (props: any) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>,
+};
