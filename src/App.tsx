@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="font-sans text-white bg-[#0a0a0a] min-h-screen">
+    <div className="font-sans text-white bg-black min-h-screen">
       <Navbar />
       <main>
         <Hero />

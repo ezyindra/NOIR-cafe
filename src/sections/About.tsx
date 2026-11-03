@@ -1,85 +1,83 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-scroll/modules';
 
 export default function About() {
   return (
-    <section id="about" className="section-padding bg-[#0a0a0a]">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          >
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gold/10 rounded-lg blur-xl"></div>
-              <div className="relative rounded-lg overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1000&auto=format&fit=crop"
-                  alt="NOIR CAFÉ Interior"
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-8">
-                  <p className="text-gold text-sm font-medium">Est. 2024</p>
-                  <h3 className="text-2xl font-serif text-white">Premium Coffee Experience</h3>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+    <section id="about" className="relative bg-black py-32 md:py-48">
+      {/* Minimalist grid layout */}
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Large statement headline */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="mb-24"
+        >
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-light text-white leading-tight">
+            Built different,
+            <br />
+            <span className="text-[#d4af37] italic font-serif">crafted right</span>
+          </h2>
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          >
-            <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">
-              Our <span className="text-gold">Passion</span> in Every Cup
-            </h2>
-            <p className="text-text-muted leading-relaxed mb-6">
-              At NOIR CAFÉ, we believe that coffee is more than just a beverage—it's an art form.
-              Our journey began with a simple mission: to create a space where premium coffee
-              meets sophisticated ambiance.
-            </p>
-            <p className="text-text-muted leading-relaxed mb-8">
-              We source our beans from the highest quality farms around the world, roasting
-              each batch to perfection in our on-site roastery. Every drink we serve is crafted
-              with precision, passion, and an unwavering commitment to excellence.
-            </p>
-
-            <div className="grid grid-cols-3 gap-8 mb-10">
-              <div className="text-center">
-                <div className="text-4xl font-serif text-gold mb-2">100%</div>
-                <div className="text-text-muted text-sm">Premium Beans</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-serif text-gold mb-2">150+</div>
-                <div className="text-text-muted text-sm">Blends</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-serif text-gold mb-2">5★</div>
-                <div className="text-text-muted text-sm">Ratings</div>
-              </div>
-            </div>
-
-            <Link
-              to="menu"
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={500}
-              className="inline-flex items-center text-gold hover:text-gold-dim transition-colors"
+        {/* Benefits grid - I & Me style */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
+          {[
+            {
+              number: '01',
+              title: 'No Sugar Added',
+              desc: 'Pure coffee. No shortcuts, no sweeteners masking the flavor. Just the natural taste of premium beans.'
+            },
+            {
+              number: '02',
+              title: 'Premium Beans',
+              desc: 'Sourced from the finest farms. Single-origin, ethically traded, roasted to perfection in small batches.'
+            },
+            {
+              number: '03',
+              title: 'Crafted Daily',
+              desc: 'Every cup made fresh. No pre-brewed batches sitting for hours. Quality you can taste.'
+            }
+          ].map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: idx * 0.15 }}
+              className="border-t border-[#333] pt-8"
             >
-              View Our Menu
-              <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </motion.div>
+              <span className="text-[#d4af37] text-sm tracking-wider">{item.number}</span>
+              <h3 className="text-2xl text-white mt-4 mb-4 font-light">{item.title}</h3>
+              <p className="text-[#666] leading-relaxed font-light">{item.desc}</p>
+            </motion.div>
+          ))}
         </div>
+
+        {/* Large image section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2 }}
+          className="mt-32 relative"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1600&auto=format&fit=crop"
+            alt="NOIR CAFÉ"
+            className="w-full h-[60vh] object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+          <div className="absolute bottom-0 left-0 p-8 md:p-16">
+            <p className="text-[#d4af37] text-sm tracking-wider mb-2">Est. 2024</p>
+            <h3 className="text-3xl md:text-5xl text-white font-light">
+              Premium Coffee
+              <br />
+              <span className="italic font-serif">Experience</span>
+            </h3>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

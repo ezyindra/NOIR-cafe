@@ -1,64 +1,73 @@
-import React, { useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-scroll/modules';
-import { Icons } from '../utils/data';
 
 export default function Hero() {
-  const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
-
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Minimalist background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0a0a0a] to-black"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent"></div>
-        {/* Decorative elements */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gold/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-[#0a0a0a] to-black"></div>
+
+        {/* Subtle grain texture */}
+        <div className="absolute inset-0 opacity-20" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
+        }}></div>
+
+        {/* Single accent glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#d4af37]/5 rounded-full blur-[150px]"></div>
       </div>
 
-      <div className="relative z-10 container-custom text-center px-6">
-        <motion.div
-          style={{ opacity, scale }}
-          className="max-w-4xl mx-auto space-y-8"
-        >
+      {/* Main content */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
+        <div className="flex flex-col items-center text-center">
+          {/* Minimalist tagline - I & Me style */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-8"
           >
-            <span className="inline-block py-1 px-4 rounded-full bg-gold/10 border border-gold/20 text-gold text-sm font-medium tracking-widest uppercase mb-6">
+            <span className="text-[#d4af37] text-sm tracking-[0.3em] uppercase font-light">
               Premium Coffee Experience
             </span>
           </motion.div>
 
+          {/* Bold headline - split for impact */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-tight"
+            transition={{ duration: 1, delay: 0.4 }}
+            className="text-white leading-[0.9] mb-6"
           >
-            The Art of <br className="hidden md:block" />
-            <span className="gradient-text">Liquid Gold</span>
+            <span className="block text-6xl md:text-8xl lg:text-[10rem] font-light tracking-tight">
+              NO FLUFF
+            </span>
+            <span className="block text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-[#666] mt-2">
+              Just pure
+            </span>
+            <span className="block text-6xl md:text-8xl lg:text-[10rem] font-serif italic text-[#d4af37] mt-4">
+              coffee
+            </span>
           </motion.h1>
 
+          {/* Minimalist description */}
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-            className="text-lg md:text-xl text-text-muted max-w-2xl mx-auto leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-[#888] text-lg md:text-xl max-w-xl mb-12 font-light"
           >
-            Experience the epitome of luxury coffee at NOIR CAFÉ. Where every sip tells a story,
-            and every moment is crafted with precision and passion.
+            We stripped coffee down to its essence.
+            <br />
+            <span className="text-white">This isn't coffee for the crowd.</span>
           </motion.p>
 
+          {/* Single CTA button */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
+            transition={{ duration: 0.8, delay: 1 }}
           >
             <Link
               to="menu"
@@ -66,31 +75,29 @@ export default function Hero() {
               smooth={true}
               offset={-80}
               duration={500}
-              className="btn btn-primary w-full sm:w-auto"
+              className="group inline-flex items-center gap-3 bg-white text-black px-8 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#d4af37] transition-all duration-300"
             >
               Explore Menu
-              <Icons.ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-            <Link
-              to="experience"
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={500}
-              className="btn btn-outline w-full sm:w-auto"
-            >
-              Our Story
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </Link>
           </motion.div>
-        </motion.div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-gold/30 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-2 bg-gold/50 rounded-full animate-pulse"></div>
         </div>
       </div>
+
+      {/* Scroll indicator - minimal */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2"
+      >
+        <div className="flex flex-col items-center gap-3">
+          <span className="text-[#555] text-xs tracking-[0.2em] uppercase">Scroll</span>
+          <div className="w-px h-12 bg-gradient-to-b from-[#d4af37] to-transparent"></div>
+        </div>
+      </motion.div>
     </section>
   );
 }

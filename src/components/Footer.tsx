@@ -1,51 +1,51 @@
 import React from 'react';
 import { Icons } from '../utils/data';
-import { Link } from 'react-scroll/modules';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="bg-black pt-20 pb-10 border-t border-gold/10">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-black border-t border-[#222] pt-20 pb-12">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
           {/* Brand */}
-          <div className="space-y-6">
-            <a href="#" className="font-serif text-2xl font-bold tracking-widest text-gold">
-              NOIR<span className="text-white">CAFÉ</span>
+          <div className="space-y-8">
+            <a href="#" className="text-3xl font-light text-[#d4af37]">
+              NOIR<span className="text-white">.</span>
             </a>
-            <p className="text-text-muted leading-relaxed">
+            <p className="text-[#666] font-light leading-relaxed max-w-xs">
               Where luxury meets liquid gold. Experience the art of premium coffee in our sophisticated space.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-text-muted hover:text-gold transition-colors">
-                <Icons.Instagram />
-              </a>
-              <a href="#" className="text-text-muted hover:text-gold transition-colors">
-                <Icons.Twitter />
-              </a>
-              <a href="#" className="text-text-muted hover:text-gold transition-colors">
-                <Icons.Facebook />
-              </a>
+            <div className="flex gap-6">
+              {[
+                { icon: Icons.Instagram, label: 'Instagram' },
+                { icon: Icons.Twitter, label: 'Twitter' },
+                { icon: Icons.Facebook, label: 'Facebook' }
+              ].map((social, idx) => (
+                <a
+                  key={idx}
+                  href="#"
+                  className="text-[#666] hover:text-[#d4af37] transition-colors"
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-serif text-lg text-gold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              {['Home', 'About', 'Menu', 'Experience', 'Gallery'].map((link) => (
+            <h3 className="text-white font-light text-lg mb-8">Navigation</h3>
+            <ul className="space-y-4">
+              {['Home', 'Story', 'Menu', 'Experience', 'Gallery', 'Contact'].map((link) => (
                 <li key={link}>
-                  <Link
-                    to={link.toLowerCase()}
-                    spy={true}
-                    smooth={true}
-                    offset={-80}
-                    duration={500}
-                    className="text-text-muted hover:text-gold transition-colors block"
+                  <a
+                    href={`#${link.toLowerCase()}`}
+                    className="text-[#666] hover:text-white font-light transition-colors"
                   >
                     {link}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -53,54 +53,42 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-serif text-lg text-gold mb-6">Visit Us</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start space-x-3">
-                <span className="text-gold mt-1">
-                  <Icons.MapPin />
-                </span>
-                <span className="text-text-muted">
+            <h3 className="text-white font-light text-lg mb-8">Visit Us</h3>
+            <ul className="space-y-6">
+              <li className="flex items-start gap-4">
+                <Icons.MapPin className="text-[#d4af37] mt-1" />
+                <span className="text-[#666] font-light leading-relaxed">
                   123 Luxury Avenue, Downtown<br />
                   Metro City, 10001
                 </span>
               </li>
-              <li className="flex items-center space-x-3">
-                <span className="text-gold">
-                  <Icons.Phone />
-                </span>
-                <span className="text-text-muted">+91 98765 43210</span>
+              <li className="flex items-center gap-4">
+                <Icons.Phone className="text-[#d4af37]" />
+                <span className="text-[#666] font-light">+91 98765 43210</span>
               </li>
-              <li className="flex items-center space-x-3">
-                <span className="text-gold">
-                  <Icons.Mail />
-                </span>
-                <span className="text-text-muted">hello@noircafe.com</span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <span className="text-gold">
-                  <Icons.Clock />
-                </span>
-                <span className="text-text-muted">Mon-Sat: 7AM - 11PM</span>
+              <li className="flex items-center gap-4">
+                <Icons.Mail className="text-[#d4af37]" />
+                <span className="text-[#666] font-light">hello@noircafe.com</span>
               </li>
             </ul>
           </div>
 
           {/* Newsletter */}
           <div>
-            <h3 className="font-serif text-lg text-gold mb-6">Newsletter</h3>
-            <p className="text-text-muted mb-6 leading-relaxed">
-              Subscribe to receive updates, special offers, and the latest news from NOIR CAFÉ.
+            <h3 className="text-white font-light text-lg mb-8">Stay Updated</h3>
+            <p className="text-[#666] font-light mb-8 leading-relaxed">
+              Subscribe for exclusive offers and the latest updates from NOIR CAFÉ.
             </p>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-4">
               <input
                 type="email"
                 placeholder="Your email address"
-                className="w-full px-4 py-3 bg-black border border-gold/20 text-white placeholder-text-muted focus:border-gold focus:outline-none transition-colors"
+                className="w-full bg-[#0a0a0a] border border-[#333] text-white px-5 py-4 font-light text-sm placeholder-[#555] focus:border-[#d4af37] focus:outline-none transition-colors"
                 required
               />
               <button
                 type="submit"
-                className="w-full bg-gold text-black px-6 py-3 font-medium hover:bg-gold-dim transition-colors"
+                className="w-full bg-[#d4af37] text-black py-4 px-6 font-medium text-sm tracking-wider hover:bg-[#e5c158] transition-colors duration-300"
               >
                 Subscribe
               </button>
@@ -108,11 +96,16 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="border-t border-gold/10 pt-8 text-center">
-          <p className="text-text-muted">
-            &copy; {currentYear} NOIR CAFÉ. All rights reserved.
+        {/* Bottom bar */}
+        <div className="border-t border-[#222] pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-[#555] font-light text-sm">
+            © {currentYear} NOIR CAFÉ. All rights reserved.
           </p>
+          <div className="flex gap-8 text-sm font-light">
+            <a href="#" className="text-[#555] hover:text-[#d4af37] transition-colors">Privacy Policy</a>
+            <a href="#" className="text-[#555] hover:text-[#d4af37] transition-colors">Terms of Service</a>
+            <a href="#" className="text-[#555] hover:text-[#d4af37] transition-colors">Sitemap</a>
+          </div>
         </div>
       </div>
     </footer>

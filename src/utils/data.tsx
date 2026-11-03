@@ -8,7 +8,7 @@ export const menuItems: MenuItem[] = [
     description: 'Double-shot espresso with notes of dark chocolate and roasted caramel.',
     price: 250,
     category: 'coffee',
-    image: '/images/coffee-1.jpg',
+    image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=600&q=80',
     popular: true,
   },
   {
@@ -17,7 +17,7 @@ export const menuItems: MenuItem[] = [
     description: 'Smooth French press coffee with steamed milk and a delicate foam.',
     price: 320,
     category: 'coffee',
-    image: '/images/coffee-2.jpg',
+    image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&q=80',
   },
   {
     id: '3',
@@ -25,7 +25,7 @@ export const menuItems: MenuItem[] = [
     description: 'Artisanal cappuccino with premium espresso and golden honey foam.',
     price: 380,
     category: 'coffee',
-    image: '/images/coffee-3.jpg',
+    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&q=80',
     popular: true,
   },
   {
@@ -34,7 +34,7 @@ export const menuItems: MenuItem[] = [
     description: 'Double ristretto with velvety microfoam and cocoa dusting.',
     price: 350,
     category: 'coffee',
-    image: '/images/coffee-4.jpg',
+    image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=80',
   },
   {
     id: '5',
@@ -42,7 +42,7 @@ export const menuItems: MenuItem[] = [
     description: 'Premium ceremonial matcha whisked with hot water and almond milk.',
     price: 420,
     category: 'tea',
-    image: '/images/tea-1.jpg',
+    image: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80',
     new: true,
   },
   {
@@ -51,7 +51,7 @@ export const menuItems: MenuItem[] = [
     description: 'Spiced black tea with cardamom, cinnamon, and steamed oat milk.',
     price: 380,
     category: 'tea',
-    image: '/images/tea-2.jpg',
+    image: 'https://images.unsplash.com/photo-1603042556893-1f74a4f3353f?w=600&q=80',
   },
   {
     id: '7',
@@ -59,7 +59,7 @@ export const menuItems: MenuItem[] = [
     description: 'Premium jasmine green tea with silver tips and lemongrass.',
     price: 350,
     category: 'tea',
-    image: '/images/tea-3.jpg',
+    image: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&q=80',
   },
   {
     id: '8',
@@ -67,7 +67,7 @@ export const menuItems: MenuItem[] = [
     description: 'Buttery, flaky French croissant baked fresh daily.',
     price: 280,
     category: 'pastry',
-    image: '/images/pastry-1.jpg',
+    image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&q=80',
     popular: true,
   },
   {
@@ -76,7 +76,7 @@ export const menuItems: MenuItem[] = [
     description: 'Classic choux pastry filled with chocolate custard and glaze.',
     price: 320,
     category: 'pastry',
-    image: '/images/pastry-2.jpg',
+    image: 'https://images.unsplash.com/photo-1624391526637-154628552010?w=600&q=80',
   },
   {
     id: '10',
@@ -84,7 +84,7 @@ export const menuItems: MenuItem[] = [
     description: 'Artisanal matcha cream in a crisp vanilla bean tart shell.',
     price: 450,
     category: 'pastry',
-    image: '/images/pastry-3.jpg',
+    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80',
   },
   {
     id: '11',
@@ -92,7 +92,7 @@ export const menuItems: MenuItem[] = [
     description: 'Sourdough bread topped with smashed avocado and microgreens.',
     price: 520,
     category: 'breakfast',
-    image: '/images/breakfast-1.jpg',
+    image: 'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&q=80',
     new: true,
   },
   {
@@ -101,7 +101,7 @@ export const menuItems: MenuItem[] = [
     description: 'Poached eggs on English muffin with ham and hollandaise sauce.',
     price: 620,
     category: 'breakfast',
-    image: '/images/breakfast-2.jpg',
+    image: 'https://images.unsplash.com/photo-1621447428367-57139586145c?w=600&q=80',
   },
 ];
 
@@ -145,12 +145,12 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const galleryItems: GalleryItem[] = [
-  { id: '1', image: '/images/gallery-1.jpg', caption: 'Interior Atmosphere', category: 'Interior' },
-  { id: '2', image: '/images/gallery-2.jpg', caption: 'Artisanal Brewing', category: 'Process' },
-  { id: '3', image: '/images/gallery-3.jpg', caption: 'Coffee Beans', category: 'Source' },
-  { id: '4', image: '/images/gallery-4.jpg', caption: 'Golden Latte Art', category: 'Art' },
-  { id: '5', image: '/images/gallery-5.jpg', caption: 'Evening Ambience', category: 'Mood' },
-  { id: '6', image: '/images/gallery-6.jpg', caption: 'Premium Selection', category: 'Menu' },
+  { id: '1', image: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&q=80', caption: 'Interior Atmosphere', category: 'Interior' },
+  { id: '2', image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=80', caption: 'Artisanal Brewing', category: 'Process' },
+  { id: '3', image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&q=80', caption: 'Coffee Beans', category: 'Source' },
+  { id: '4', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80', caption: 'Golden Latte Art', category: 'Art' },
+  { id: '5', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80', caption: 'Evening Ambience', category: 'Mood' },
+  { id: '6', image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=600&q=80', caption: 'Premium Selection', category: 'Menu' },
 ];
 
 // Icons Component

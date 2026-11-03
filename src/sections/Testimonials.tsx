@@ -1,54 +1,92 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Icons, testimonials } from '../utils/data';
+import { Icons } from '../utils/data';
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="section-padding bg-[#0a0a0a]">
-      <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">
-            <span className="text-gold">Voices</span> of Excellence
+    <section id="testimonials" className="relative bg-[#050505] py-32 md:py-48">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-20"
+        >
+          <h2 className="text-5xl md:text-7xl font-light text-white">
+            Voices of <span className="text-[#d4af37] italic font-serif">Excellence</span>
           </h2>
-          <div className="h-1 w-24 bg-gold mx-auto mb-6"></div>
-          <p className="text-text-muted max-w-2xl mx-auto">
-            What our guests and critics say about their NOIR CAFÉ experience
-          </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((t, idx) => (
+        {/* Testimonials */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          {[
+            {
+              name: 'Elena Thompson',
+              role: 'Coffee Connoisseur',
+              content: 'NOIR CAFÉ offers an extraordinary coffee experience. The atmosphere is sophisticated, and every drink tells a story.',
+              rating: 5
+            },
+            {
+              name: 'Marcus Chen',
+              role: 'Design Enthusiast',
+              content: 'The attention to detail in every cup is remarkable. From bean selection to brewing technique, perfection achieved.',
+              rating: 5
+            },
+            {
+              name: 'Sarah Williams',
+              role: 'Regular Visitor',
+              content: 'A perfect blend of aesthetics and functionality. The space feels luxurious yet welcoming.',
+              rating: 4
+            },
+            {
+              name: 'David Rodriguez',
+              role: 'Business Owner',
+              content: 'My favorite spot for morning meetings. The Wi-Fi is reliable, and the baristas always get my order right.',
+              rating: 5
+            }
+          ].map((t, idx) => (
             <motion.div
-              key={t.id}
+              key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="glass-panel p-8 rounded-xl relative"
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="relative group"
             >
-              <div className="absolute top-6 right-6 text-gold/10 text-6xl font-serif leading-none">
+              {/* Quote mark */}
+              <div className="absolute -top-4 -left-4 text-[#d4af37]/10 text-8xl font-serif leading-none z-0">
                 "
               </div>
-              <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Icons.Star
-                    key={i}
-                    className={`w-5 h-5 ${
-                      i < t.rating ? 'text-gold fill-gold' : 'text-text-muted'
-                    }`}
-                  />
-                ))}
-              </div>
-              <p className="text-text-muted leading-relaxed mb-6 relative z-10">
-                {t.content}
-              </p>
-              <div className="flex items-center">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-gold-dim flex items-center justify-center text-black font-serif font-bold text-lg mr-3">
-                  {t.name[0]}
+
+              <div className="relative bg-[#0a0a0a] border border-[#222] p-8 hover:border-[#d4af37]/50 transition-all duration-500">
+                {/* Rating */}
+                <div className="flex gap-1 mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <div
+                      key={i}
+                      className={`w-4 h-4 ${i < t.rating ? 'text-[#d4af37]' : 'text-[#333]'}`}
+                    >
+                      <Icons.Star className="w-full h-full fill-current" />
+                    </div>
+                  ))}
                 </div>
-                <div>
-                  <h4 className="text-white font-medium">{t.name}</h4>
-                  <p className="text-text-muted text-sm">{t.role}</p>
+
+                {/* Content */}
+                <p className="text-[#999] leading-relaxed mb-8 relative z-10 font-light">
+                  {t.content}
+                </p>
+
+                {/* Author */}
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#d4af37] to-[#aa8c2c] rounded-full flex items-center justify-center text-black font-serif text-lg mr-4">
+                    {t.name[0]}
+                  </div>
+                  <div>
+                    <h4 className="text-white font-light text-lg">{t.name}</h4>
+                    <p className="text-[#666] text-sm font-light">{t.role}</p>
+                  </div>
                 </div>
               </div>
             </motion.div>
